@@ -1,0 +1,20 @@
+The included software and schematics are released under the Creative 
+Commons BY-NC (Attribution/Non-commercial) license. 
+http://creativecommons.org/licenses/by-nc/3.0/
+This simply means that you can do anything you want with this software,
+as long as you don't sell it, use it in a product, or release it under a 
+different license. If you would like to use this software commercially or
+under a different license, you must obtain permission from the author 
+(github.com/wyager, will.yager@gmail.com), unless the author is dead, in 
+which case I don't really care all that much, do I?
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
