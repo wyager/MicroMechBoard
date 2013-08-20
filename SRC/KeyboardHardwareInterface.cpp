@@ -112,3 +112,22 @@ BoolArray<64> KeyboardHardwareInterface::scanKeys(){
     if(!(PINC & (1<<7))) result.set(63,true);//button 3
     return result;
 }
+
+button_report KeyboardHardwareInterface::update(){
+    button_report result;
+    result.num_events = 0;
+    BoolArray<64> current_raw_key_states = KeyboardHardwareInterface::scanKeys();
+    for (int i=0; i<64; i++) {
+        bool current_debounced_key_state = this->button_debouncer.update(i, current_raw_key_states.get(i));
+        //If we've detected a change in debounced key state...
+        if (current_debounced_key_state != this->recorded_button_states.get(i)) {
+            this->recorded_button_states.set(i, current_debounced_key_state);
+
+            result.events[result.num_events].button_number = i;
+            result.events[result.num_events].state = current_debounced_key_state;
+            result.num_events++;
+            if (result.num_events == MAX_BUTTON_EVENTS_PER_SCAN) break;
+        }
+    }
+    return result;
+}

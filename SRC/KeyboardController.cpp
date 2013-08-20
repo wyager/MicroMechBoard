@@ -7,7 +7,6 @@
 //
 
 #include "KeyboardController.h"
-#include "KeyboardHardwareInterface.h"
 #include <inttypes.h>
 extern "C"{
 #include "twi.h"
@@ -23,16 +22,10 @@ bool check_for_slave_keyboard_on_i2c_bus(){
 
 void KeyboardController::update(){
     //Master or slave, scan our own hardware
-    BoolArray<64> current_raw_key_states = KeyboardHardwareInterface::scanKeys();
-    for (int i=0; i<64; i++) {
-        signed char current_debounced_key_state = this->button_debouncer.update(i, current_raw_key_states.get(i));
-        //If we've detected a change in debounced key state...
-        if (current_debounced_key_state != this->recorded_button_states.get(i)) {
-            this->recorded_button_states.set(i, current_debounced_key_state);
-            //Tell the computer (or master) that the key has been pressed or depressed
-            this->computer_interface.update_button_state(i, current_debounced_key_state);
-        }
-    }
+    button_report report = this->hardware_interface.update();
+    //Deal with any pressed/released buttons
+    this->computer_interface.process_button_report(report);
+    
 
     //If no slave found yet:
     //   Check for slave
@@ -51,7 +44,7 @@ void KeyboardController::update(){
             uint8_t number_of_messages_being_sent = packet[0];
             for(unsigned char i=0; i<number_of_messages_being_sent; i++){ //Recieve 1 key event (3 bytes) at a time
                 uint16_t key = 0; //Key code from USB spec
-                char state; //pressed = 1, released = 0
+                bool state; //pressed = 1, released = 0
                 key |= packet[i*3+1];
                 key |= packet[i*3+2] << 8;
                 state = packet[i*3+3];

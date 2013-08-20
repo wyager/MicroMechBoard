@@ -51,14 +51,8 @@ void KeyboardComputerInterface::set_led_status(unsigned char status){
     this->led_status = status;
 }
 
-void KeyboardComputerInterface::update_button_state(unsigned char button, char state){
-    uint16_t keycode = KeyboardComputerInterface::resolve_button_number_to_key(button);
-    if (keycode != 0){
-        this->update_key_state(keycode, state);
-    }
-}
 
-void KeyboardComputerInterface::update_key_state(uint16_t key, char state){
+void KeyboardComputerInterface::update_key_state(uint16_t key, bool state){
     if(this->is_master){//Tell USB library about key state
         if(state){
             usb_press(key);
@@ -82,4 +76,14 @@ void KeyboardComputerInterface::update_key_state(uint16_t key, char state){
     }
 }
 
-
+void KeyboardComputerInterface::process_button_report(const button_report& report){
+    //For every change (press or release) that has occurred...
+    for(uint8_t i=0; i<report.num_events; i++){
+        button_event event = report.events[i];
+        uint16_t keycode = KeyboardComputerInterface::resolve_button_number_to_key(event.button_number);
+        if(keycode != 0){ //Make sure the button actually does something!
+            bool state = event.state;
+            this->update_key_state(keycode, state);
+        }
+    }
+}

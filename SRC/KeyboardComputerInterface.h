@@ -10,22 +10,8 @@
 #define __keyboard2__KeyboardComputerInterface__
 #include <inttypes.h>
 #include "keylayouts.h"
+#include "Types.h"
 
-
-
-struct key_mapping {
-    //Physical button
-    unsigned char button;
-    //USB key data
-    uint16_t key;
-};
-
-struct key_event{
-    //Physical button state
-    char state;
-    //USB key data
-    uint16_t key;
-};
 
 //The following should be changed to reflect the actual physical key number/key value pairs
 //So {1, KEY_A} means physical button 1 is the 'a' key
@@ -79,10 +65,11 @@ public:
     //takes as an argument a physical button and returns a key code
     //Returns 0 on fail (usually means failure to map physical button to key code)
     static uint16_t resolve_button_number_to_key(unsigned char button);
+    //Takes a series of press/releases as described in a button report and deals with them
+    void process_button_report(const button_report& report);
     //Tell the computer that a physical button has been pushed.
     //If we are a master, tell over USB. If we are a slave, tell over I2C.
-    void update_button_state(unsigned char button, char state);//Button=physical number (per arbitrary circuit)
-    void update_key_state(uint16_t key, char state);//Key=digital number key code (per USB spec)
+    void update_key_state(uint16_t key, bool state);//Key=digital number key code (per USB spec)
     //If master, tell the computer (over USB) about the keyboard's overall state
     //Also get LED status from computer
     void inform_computer_of_keyboard_state();

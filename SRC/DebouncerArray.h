@@ -15,7 +15,7 @@ protected:
     //The number of samples that conflict with the current recorded state
     unsigned char count[Size];
     //The current recorded state
-    signed char state[Size];
+    bool state[Size];
     //How many contrary samples it takes to flip the state
     unsigned char sensitivity;
     
@@ -28,17 +28,16 @@ public:
         }
         this->sensitivity = sensitivity;
     }
-    //Update with a state value. Should be either 0 or 1
-    //Returns -1 on error, and element value otherwise
-    virtual signed char update(int element, signed char state);
+    //Update with a state value. Returns debounced state.
+    bool update(int element, bool state);
     //Gets the value of an element
-    signed char get(int element);
+    bool get(int element);
 };
 
 template <int Size>
-signed char DebouncerArray<Size>::update(int element, signed char state){
+bool DebouncerArray<Size>::update(int element, bool state){
     if (element >= Size || element < 0){
-        return -1;
+        return false;
     }
     //Sample reaffirms existing recorded state
     if(this->state[element] == state){
@@ -58,7 +57,7 @@ signed char DebouncerArray<Size>::update(int element, signed char state){
 }
 
 template <int Size>
-signed char DebouncerArray<Size>::get(int element){
+bool DebouncerArray<Size>::get(int element){
     return this->state[element];
 }
 
