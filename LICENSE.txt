@@ -1,20 +1,26 @@
-The included software and schematics are released under the Creative 
-Commons BY-NC (Attribution/Non-commercial) license. 
-http://creativecommons.org/licenses/by-nc/3.0/
-This simply means that you can do anything you want with this software,
-as long as you don't sell it, use it in a product, or release it under a 
-different license. If you would like to use this software commercially or
-under a different license, you must obtain permission from the author 
-(github.com/wyager, will.yager@gmail.com), unless the author is dead, in 
-which case I don't really care all that much, do I?
+Copyright 2013 Will Yager.
 
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
+All rights reserved.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+Redistribution and use of the software and schematics or any derivative works
+are permitted provided that the following conditions are met:
+
+    * Redistributions may not be sold, nor may they be used in a commercial
+      product or activity.
+    * Redistributions that are modified from the original source must include
+      the complete source code, including the source code for all components
+      used by a binary built from the modified sources.
+    * Redistributions must reproduce the above copyright notice, this list of
+      conditions and the following disclaimer in the documentation and/or other
+      materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
