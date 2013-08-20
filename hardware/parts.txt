@@ -1,7 +1,9 @@
 Here's what I ordered to make 3x boards. Only 2/3rds of this is needed to make a whole 66-key keyboard. In some cases, I bought some extra parts (the MIN# is higher than it needs to be) because I thought I might break some parts. Using a 75 ohm resistor for the blue LED was a mistake. I should have used 150 ohm like with the other LEDs. The blue LED is much brighter, even with its supposedly much higher voltage drop. 
 
 PART		VAL		PN			MIN #		BOUGHT
-DIODE: 				1N4148TACT-ND		90		100
+
+---Digikey:---
+DIODE:				1N4148TACT-ND		90		100
 SWITCH:				CH197-ND		99		100
 LED, RED			754-1606-ND		3		3
 LED, GRN			754-1603-ND		3		3
@@ -11,3 +13,18 @@ RESISTOR, LED	150		CF14JT150RCT-ND		6		10
 RESISTOR, BLED	75		S75QCT-ND		3		4
 RESISTOR, I2C	5K		4.99KXBK-ND		6		10
 
+---PJRC:---
+Teensy 2.0						3		3
+
+---Other:---
+DIP Male-male pin headers	B005HN237S		~100		200
+***Digikey and others have these too
+
+Mini-USB cable						1		1
+
+TRRS 3.5mm audio cable					1		1
+***BE CAREFUL! Some of these are built wrong. I had to re-wire the first one I bought.
+***A proper TRRS cable should be symmetrical (tip goes to tip, sleeve goes to sleeve, etc)
+***but some appear to be built incorrectly.
+
+PCB							3		3
