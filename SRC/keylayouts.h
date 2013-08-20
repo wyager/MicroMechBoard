@@ -4,7 +4,9 @@
 
 
 // http://en.wikipedia.org/wiki/Keyboard_layout
-
+// 0x80xx = modifier key
+// 0x40xx = normal key
+// 0x00xx = ??? I didn't put those there
 
 #define MODIFIERKEY_CTRL        ( 0x01 | 0x8000 )
 #define MODIFIERKEY_SHIFT       ( 0x02 | 0x8000 )
@@ -137,6 +139,10 @@
 #define KEY_F22         ( 113 | 0x4000 )
 #define KEY_F23         ( 114 | 0x4000 )
 #define KEY_F24         ( 115 | 0x4000 )
+#define KEY_MUTE        ( 127 | 0x4000 )
+#define KEY_VOLUME_UP   ( 128 | 0x4000 )
+#define KEY_VOLUME_DOWN ( 129 | 0x4000 )
+
 
 
 #endif

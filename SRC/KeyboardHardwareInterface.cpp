@@ -107,9 +107,9 @@ BoolArray<64> KeyboardHardwareInterface::scanKeys(){
         }//Scanned all keys in row
         reset_rows();
     }//Scanned all keys
-    if(!(PINB & (1<<4))) result.set(61, true);//button 1
+    if(!(PINB & (1<<4))) result.set(63, true);//button 3
     if(!(PIND & (1<<6))) result.set(62, true);//button 2
-    if(!(PINC & (1<<7))) result.set(63,true);//button 3
+    if(!(PINC & (1<<7))) result.set(61,true);//button 1
     return result;
 }
 
