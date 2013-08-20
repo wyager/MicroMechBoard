@@ -1,27 +1,37 @@
-This project is the teensy code for Will Yager's custom mechanical keyboard project.
+# MicroMechBoard
+This project is the teensy code for Will Yager's custom mechanical keyboard
+project.
 
 The code serves two functions:
 
-If plugged into USB, the device will act as a stand-alone keyboard with 33 keys. ("The master")
+1. If plugged into USB, the device will act as a stand-alone keyboard with 33
+keys. ("The master")
+2. If a second device is plugged into that first device, the two devices will
+share relevant information over I2C. In this way, two of these devices can be
+connected to form a 66-key keyboard. With some modification to the firmware and
+the I2C pull-up resistors, one could theoretically chain up to 129 boards
+together (I believe).
 
-If a second device is plugged into that first device, the two devices will share relevant information over I2C. In this way, two of these devices can be connected to form a 66-key keyboard. With some modification to the firmware and the I2C pull-up resistors, one could theoretically chain up to 129 boards together (I believe).
+## Building/installing
+1. Install `avr-gcc`.
+2. Install Teensy loader.
+3. `cd src`
+4. `./make`
+5. Drag `main.hex` into Teensy loader.
+6. Program Teensy.
 
-HOW TO BUILD AND INSTALL:
-install avr-gcc
-install teensy loader
-cd [project directory]
-./make
-drag main.hex into teensy loader
-program teensy
+## Modifying key layout
+1. Modify `keys[]` in `KeyboardComputerInterface.h`.
+2. Replace values like `KEY_A` with other values from `keylayouts.h`.
 
-HOW TO MODIFY KEY LAYOUT:
-modify keys[] in KeyboardComputerInterface.h. Replace values like KEY_A with other values from keylayouts.h.
-This should be fairly simple to figure out. Within the file, I have keys[] laid out just like the physical keys.
+This should be fairly simple to figure out. Within the file, I have `keys[]`
+laid out just like the physical keys.
 
+## Program structure
 
-The program is (roughly) divided as follows:
+### main.cpp
 
-main.cpp:
+```
        Start USB/I2C
        Determine master/slave status
        Set up a KeyboardController in master/slave mode
@@ -34,9 +44,11 @@ main.cpp:
               Upon I2C request:
                      Do KeyboardController::update()
                      Send any key press/release events to master over I2C
+```
 
+### KeyboardController.cpp
 
-KeyboardController.cpp:
+```
        Tie together Hardware, I2C, and USB
        Spawns a KeyboardHardwareInterface to monitor physical buttons
        Spawns a DebouncerArray to debounce physical buttons
@@ -55,8 +67,11 @@ KeyboardController.cpp:
                      Send relevant info to master
                      Scan its own hardware after sending info
        Manages LEDs and such similar tasks
+```
 
-KeyboardHardwareInterface.cpp:
+### KeyboardHardwareInterface.cpp
+
+```
        Scans the key matrix
        Builds a compact bool array representing all key states:
               key_x = count right from bottom left
@@ -65,8 +80,11 @@ KeyboardHardwareInterface.cpp:
               key_values[key_index] = scanned_values[key_index]
        Returns this bool array for debouncing by the KeyboardController
        Provides convenience functions for LEDs and such
+```
 
-KeyboardComputerInterface.cpp
+### KeyboardComputerInterface.cpp
+
+```
        Resolves physical button indexes to USB spec key values:
               Which button = which key is determined in the header file
        if master:
@@ -76,3 +94,4 @@ KeyboardComputerInterface.cpp
               Save up to 5 key press/release events in an array
               The slave I2C request handler will then send these
                      press/release events to the master over I2C
+```
