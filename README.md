@@ -14,7 +14,7 @@ together (I believe).
 
 ## Building/installing
 1. Install `avr-gcc`.
-2. Install `teensy loader`.
+2. Install Teensy loader.
 3. `cd src`
 4. `./make`
 5. Drag `main.hex` into Teensy loader.
