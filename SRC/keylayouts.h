@@ -4,6 +4,11 @@
 
 
 // http://en.wikipedia.org/wiki/Keyboard_layout
+// NOT ALL KEYS ARE IN THIS FILE. THERE ARE MANY MORE.
+// Please see HID Usage tables, section 10, "KEYBOARD/KEYPAD PAGE".
+// Just google "HID Usage Tables". It's all there.
+// I'm too lazy to add all the various keys, so if you're not lazy,
+// please submit a pull request if you've added a bunch of keys!
 // 0x80xx = modifier key
 // 0x40xx = normal key
 // 0x00xx = ??? I didn't put those there
