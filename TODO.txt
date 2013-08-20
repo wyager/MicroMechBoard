@@ -2,6 +2,7 @@ THINGS TO DO:
 
 CODE:
 Implement PWM for the LEDs. All LEDs are on PWM pins.
+Add example of how to add e.g. a fn key via KeyboardComputerInterface
 
 HARDWARE:
 Move a few vias further from solder pads.
