@@ -3,6 +3,7 @@ This project is the teensy code for Will Yager's custom mechanical keyboard
 project.
 
 The code serves two functions:
+
 1. If plugged into USB, the device will act as a stand-alone keyboard with 33
 keys. ("The master")
 2. If a second device is plugged into that first device, the two devices will
