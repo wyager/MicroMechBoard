@@ -13,29 +13,53 @@ extern "C"{
 }
 
 void KeyboardHardwareInterface::set_red_led(bool value){
-    if(value){
-        PORTD |= 1<<7;
-    }
-    else{
-        PORTD &= ~(1<<7);
-    }
+    set_red_pwm(!!value * 255);
 }
 void KeyboardHardwareInterface::set_green_led(bool value){
-    if(value){
-        PORTB |= 1<<6;
-    }
-    else{
-        PORTB &= ~(1<<6);
-    }
+    set_green_pwm(!!value*255);
 }
 void KeyboardHardwareInterface::set_blue_led(bool value){
-    if(value){
-        PORTB |= 1<<5;
+    set_blue_pwm(!!value*15);//The blue LED is much brighter
+}
+
+
+
+//LED 1
+void KeyboardHardwareInterface::set_green_pwm(uint8_t value){
+    if(value == 0){
+        DDRB &= ~(1<<6);
+        OCR1B = 0;
     }
     else{
-        PORTB &= ~(1<<5);
+        DDRB |= 1 << 6;
+        OCR1B = value;
     }
 }
+
+//LED 2
+void KeyboardHardwareInterface::set_blue_pwm(uint8_t value){
+    if(value == 0){
+        DDRB &= ~(1<<5);
+        OCR1A = 0;
+    }
+    else{
+        DDRB |= 1 << 5;
+        OCR1A = value;
+    }
+}
+
+//LED 3
+void KeyboardHardwareInterface::set_red_pwm(uint8_t value){
+    if(value == 0){
+        DDRD &= ~(1<<7);
+        OCR4D = 0;
+    }
+    else{
+        DDRD |= 1 << 7;
+        OCR4D = value;
+    }
+}
+
 
 //These functions map a left-to-right, bottom-to-top row/column
 //number to an actual pin number and then do operations on them

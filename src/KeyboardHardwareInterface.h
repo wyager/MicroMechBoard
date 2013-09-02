@@ -28,6 +28,9 @@ public:
     static void set_red_led(bool value);
     static void set_green_led(bool value);
     static void set_blue_led(bool value);
+    static void set_red_pwm(uint8_t value);
+    static void set_green_pwm(uint8_t value);
+    static void set_blue_pwm(uint8_t value);
     //Simply iterates through all PHYSICAL keys and sets its corresponding bit value to true
     //if the key is pressed. Physical key numbers are resolved to digital key numbers in KeyboardComputerInterface.
     static BoolArray<64> scanKeys();
