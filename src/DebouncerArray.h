@@ -1,10 +1,7 @@
-//
 //  DebouncerArray.h
-//  keyboard
-//
 //  Created by Will Yager on 6/17/13.
 //  Copyright (c) 2013 Will Yager. All rights reserved.
-//
+//  Used for debouncing signals.
 
 #ifndef __keyboard__DebouncerArray__
 #define __keyboard__DebouncerArray__

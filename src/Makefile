@@ -45,7 +45,7 @@ TARGET = main
 
 
 # List C source files here. (C dependencies are automatically generated.)
-SRC =	usb_keyboard.c \
+  SRC = usb_keyboard.c \
 	twi.c
 
 
@@ -78,9 +78,14 @@ OBJDIR = .
 
 # List C++ source files here. (C dependencies are automatically generated.)
 CPPSRC = $(TARGET).cpp \
-	KeyboardHardwareInterface.cpp \
-	KeyboardComputerInterface.cpp \
-	KeyboardController.cpp 
+	HardwareController.cpp \
+	ButtonDebouncer.cpp \
+	ButtonDeltaDetector.cpp \
+	KeyMapper.cpp \
+	MasterNotifier.cpp \
+	I2CCommunicator.cpp \
+	SlaveNotifier.cpp \
+	USBCommunicator.cpp
 	
 
 

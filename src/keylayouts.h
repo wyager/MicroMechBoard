@@ -1,7 +1,9 @@
 #ifndef KEYLAYOUTS_H__
 #define KEYLAYOUTS_H__
 
-
+// 0x80xx = modifier key
+// 0x40xx = normal key
+// 0x00xx = ??? (Those were put there by PJRC, I think)
 
 // http://en.wikipedia.org/wiki/Keyboard_layout
 // NOT ALL KEYS ARE IN THIS FILE. THERE ARE MANY MORE.
@@ -9,9 +11,6 @@
 // Just google "HID Usage Tables". It's all there.
 // I'm too lazy to add all the various keys, so if you're not lazy,
 // please submit a pull request if you've added a bunch of keys!
-// 0x80xx = modifier key
-// 0x40xx = normal key
-// 0x00xx = ??? I didn't put those there
 
 #define MODIFIERKEY_CTRL        ( 0x01 | 0x8000 )
 #define MODIFIERKEY_SHIFT       ( 0x02 | 0x8000 )
@@ -131,7 +130,7 @@
 #define KEYPAD_9        ( 97  | 0x4000 )
 #define KEYPAD_0        ( 98  | 0x4000 )
 #define KEYPAD_PERIOD   ( 99  | 0x4000 )
-#define KEY_MENU	( 101 | 0x4000 )
+#define KEY_MENU		( 101 | 0x4000 )
 #define KEY_F13         ( 104 | 0x4000 )
 #define KEY_F14         ( 105 | 0x4000 )
 #define KEY_F15         ( 106 | 0x4000 )
