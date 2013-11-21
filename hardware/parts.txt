@@ -9,8 +9,7 @@ LED, RED			754-1606-ND		3		3
 LED, GRN			754-1603-ND		3		3
 LED, BLUE			754-1596-ND		3		3
 PHONO JACK			CP-43514-ND		4		4
-RESISTOR, LED	150		CF14JT150RCT-ND		6		10
-RESISTOR, BLED	75		S75QCT-ND		3		4
+RESISTOR, LED	150		CF14JT150RCT-ND		9		10
 RESISTOR, I2C	5K		4.99KXBK-ND		6		10
 
 ---PJRC:---
@@ -25,6 +24,6 @@ Mini-USB cable						1		1
 TRRS 3.5mm audio cable					1		1
 ***BE CAREFUL! Some of these are built wrong. I had to re-wire the first one I bought.
 ***A proper TRRS cable should be symmetrical (tip goes to tip, sleeve goes to sleeve, etc)
-***but some appear to be built incorrectly.
+***but some appear to be built incorrectly. Mine had the ground and mic wires crossed.
 
 PCB							3		3
