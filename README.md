@@ -16,12 +16,12 @@ together (I believe).
 1. Install `avr-gcc`.
 2. Install Teensy loader.
 3. `cd src`
-4. `./make`
+4. `make`
 5. Drag `main.hex` into Teensy loader.
 6. Program Teensy.
 
 ## Modifying key layout
-1. Modify `keys[]` in `KeyboardComputerInterface.h`.
+1. Modify `keys[]` in `KeybMapper.cpp`.
 2. Replace values like `KEY_A` with other values from `keylayouts.h`.
 
 This should be fairly simple to figure out. Within the file, I have `keys[]`
@@ -34,64 +34,22 @@ laid out just like the physical keys.
 ```
        Start USB/I2C
        Determine master/slave status
-       Set up a KeyboardController in master/slave mode
-       if master:
-              Start I2C master mode
-              Periodically do KeyboardControler::update()
-       if slave:
-              Disable USB hardware
-              Set up a listener for requests for I2C data
-              Upon I2C request:
-                     Do KeyboardController::update()
-                     Send any key press/release events to master over I2C
-```
+       
+       forever:
+              led_status
+              => get hardware state from HardwareController
+              => debounce buttons with ButtonDebouncer
+              => detect changes in buttons with ButtonDeltaDetector
+              => map button changes to key changes with KeyMapper
+              =: key_changes
 
-### KeyboardController.cpp
+              led_status
+              => update the slave (if it exists) with the SlaveNotifier
+              =: slave_key_changes
 
-```
-       Tie together Hardware, I2C, and USB
-       Spawns a KeyboardHardwareInterface to monitor physical buttons
-       Spawns a DebouncerArray to debounce physical buttons
-       Spawns a KeyboardComputerInterface to:
-              Send keystrokes over USB (master)
-              Send keystrokes over I2C (slave)
-       if master:
-              Detects slave keyboards
-              Scans its own hardware for key presses
-              Scans slave hardware for key presses (over I2C)
-              Tells the slave about caps/num/etc. lock status
-              Send all key presses over USB
-       if slave:
-              Wait for request from master
-              Upon such request:
-                     Send relevant info to master
-                     Scan its own hardware after sending info
-       Manages LEDs and such similar tasks
-```
+              key_changes, slave_key_changes
+              => notify the master (over USB or I2C) of key changes with the MasterNotifier
+              =: led_status
+              
 
-### KeyboardHardwareInterface.cpp
-
-```
-       Scans the key matrix
-       Builds a compact bool array representing all key states:
-              key_x = count right from bottom left
-              key_y = count up from bottom left
-              key_index = key_x + key_y * x_max
-              key_values[key_index] = scanned_values[key_index]
-       Returns this bool array for debouncing by the KeyboardController
-       Provides convenience functions for LEDs and such
-```
-
-### KeyboardComputerInterface.cpp
-
-```
-       Resolves physical button indexes to USB spec key values:
-              Which button = which key is determined in the header file
-       if master:
-              Use the PJRC keyboard library press() and release() functions
-              to send keystrokes over USB
-       if slave:
-              Save up to 5 key press/release events in an array
-              The slave I2C request handler will then send these
-                     press/release events to the master over I2C
 ```
