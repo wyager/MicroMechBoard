@@ -21,7 +21,7 @@ together (I believe).
 6. Program Teensy.
 
 ## Modifying key layout
-1. Modify `keys[]` in `KeybMapper.cpp`.
+1. Modify `keys[]` in `KeyMapper.cpp`.
 2. Replace values like `KEY_A` with other values from `keylayouts.h`.
 
 This should be fairly simple to figure out. Within the file, I have `keys[]`
