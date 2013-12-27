@@ -3,7 +3,7 @@
 //  Copyright (c) 2013 Will Yager. All rights reserved.
 //  Controls hardware peripherals and sets the LEDs
 
-#include "HardwareController.h"
+#include "device/HardwareController.h"
 extern "C"{
 #include <avr/io.h>
 #include <util/delay.h>

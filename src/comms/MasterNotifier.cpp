@@ -3,7 +3,7 @@
 //  Copyright (c) 2013 Will Yager. All rights reserved.
 //  Tells the master (either USB or I2C) about any key changes we've seen lately
 
-#include "MasterNotifier.h"
+#include "comms/MasterNotifier.h"
 
 
 MasterNotifier::MasterNotifier(USBCommunicator& usb, I2CCommunicator& i2c):usb_communicator(usb),i2c_communicator(i2c){

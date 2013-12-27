@@ -3,7 +3,7 @@
 //  Copyright (c) 2013 Will Yager. All rights reserved.
 //  Responsible for debouncing hardware buttons
 
-#include "ButtonDebouncer.h"
+#include "hardware/ButtonDebouncer.h"
 
 //Debounce raw hardware samples
 ButtonsState ButtonDebouncer::update(const ButtonsState& raw_state){

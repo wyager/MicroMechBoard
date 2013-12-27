@@ -3,9 +3,9 @@
 //  Copyright (c) 2013 Will Yager. All rights reserved.
 //  Responsible for communicating with the host PC (if one is attached)
 
-#include "USBCommunicator.h"
+#include "comms/USBCommunicator.h"
 extern "C"{
-#include "usb_keyboard.h"
+#include "device/usb_keyboard.h"
 #include <avr/io.h>
 }
 

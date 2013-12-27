@@ -7,7 +7,7 @@
 #define ____SlaveNotifier__
 
 #include "Types.h"
-#include "I2CCommunicator.h"
+#include "comms/I2CCommunicator.h"
 
 class SlaveNotifier {
     I2CCommunicator& i2c_communicator;

@@ -7,7 +7,7 @@
 #define __keyboard2__ButtonDebouncer__
 
 #include "Types.h"
-#include "DebouncerArray.h"
+#include "hardware/DebouncerArray.h"
 class ButtonDebouncer {
 private:
 	DebouncerArray<64> debouncer;

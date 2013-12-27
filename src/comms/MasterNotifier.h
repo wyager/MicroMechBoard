@@ -7,8 +7,8 @@
 #define __keyboard2__MasterNotifier__
 
 #include "Types.h"
-#include "USBCommunicator.h"
-#include "I2CCommunicator.h"
+#include "comms/USBCommunicator.h"
+#include "comms/I2CCommunicator.h"
 
 class MasterNotifier {
 private:

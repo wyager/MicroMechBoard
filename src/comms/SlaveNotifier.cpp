@@ -2,7 +2,7 @@
 //  Created by William Yager on 10/12/13.
 //  Copyright (c) 2013 Will Yager. All rights reserved.
 
-#include "SlaveNotifier.h"
+#include "comms/SlaveNotifier.h"
 
 KeysDelta SlaveNotifier::update(uint8_t led_status){
 

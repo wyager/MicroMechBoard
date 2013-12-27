@@ -3,7 +3,7 @@
 //  Copyright (c) 2013 Will Yager. All rights reserved.
 //  Detects changes in button state
 
-#include "ButtonDeltaDetector.h"
+#include "hardware/ButtonDeltaDetector.h"
 
 ButtonsDelta ButtonDeltaDetector::update(const ButtonsState& debounced_states){
     ButtonsDelta result;

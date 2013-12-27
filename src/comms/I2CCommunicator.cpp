@@ -3,9 +3,9 @@
 //  Copyright (c) 2013 Will Yager. All rights reserved.
 //  Communicates over I2C
 
-#include "I2CCommunicator.h"
+#include "comms/I2CCommunicator.h"
 extern "C"{
-#include "twi.h"
+#include "device/twi.h"
 }
 
 /*********** All nasty I2C stuff is mediated in this file. ***********

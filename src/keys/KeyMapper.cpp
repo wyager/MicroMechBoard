@@ -3,8 +3,8 @@
 //  Copyright (c) 2013 Will Yager. All rights reserved.
 //  Maps physical buttons to USB spec key codes. 
 
-#include "KeyMapper.h"
-#include "keylayouts.h"
+#include "keys/KeyMapper.h"
+#include "keys/keylayouts.h"
 
 //Ties a physical button number to a USB key spec number
 struct key_mapping {

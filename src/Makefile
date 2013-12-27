@@ -45,8 +45,8 @@ TARGET = main
 
 
 # List C source files here. (C dependencies are automatically generated.)
-  SRC = usb_keyboard.c \
-	twi.c
+  SRC = device/usb_keyboard.c \
+	device/twi.c
 
 
 # MCU name, you MUST set this to match the board you are using
@@ -78,14 +78,14 @@ OBJDIR = .
 
 # List C++ source files here. (C dependencies are automatically generated.)
 CPPSRC = $(TARGET).cpp \
-	HardwareController.cpp \
-	ButtonDebouncer.cpp \
-	ButtonDeltaDetector.cpp \
-	KeyMapper.cpp \
-	MasterNotifier.cpp \
-	I2CCommunicator.cpp \
-	SlaveNotifier.cpp \
-	USBCommunicator.cpp
+	device/HardwareController.cpp \
+	comms/I2CCommunicator.cpp \
+	comms/USBCommunicator.cpp \
+	comms/MasterNotifier.cpp \
+	comms/SlaveNotifier.cpp \
+	hardware/ButtonDebouncer.cpp \
+	hardware/ButtonDeltaDetector.cpp \
+	keys/KeyMapper.cpp \
 	
 
 
