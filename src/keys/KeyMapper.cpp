@@ -19,7 +19,7 @@ struct key_mapping {
 //The following layouts mimic their physical layout. The button number is, in cartesian coordinates, x+6y
 
 //Left keyboard 
-/*
+
 const struct key_mapping keys[] =
 {
                             {61,0},{62, KEY_CAPS_LOCK},{63,KEY_NUM_LOCK},
@@ -29,9 +29,9 @@ const struct key_mapping keys[] =
     {6,MODIFIERKEY_LEFT_SHIFT},{7,KEY_Z},{8,KEY_X},{9,KEY_C},{10,KEY_V},{11,KEY_B},
     {0,KEY_SLASH},{1,KEY_LEFT_BRACE},{2,KEY_RIGHT_BRACE},{3,MODIFIERKEY_LEFT_ALT},{4,MODIFIERKEY_LEFT_CTRL},{5,MODIFIERKEY_LEFT_GUI}
 };
-*/
-//Right keyboard
 
+//Right keyboard
+/*
 const struct key_mapping keys[] =
 {
                 {61, KEY_MUTE}, {62, KEY_VOLUME_DOWN}, {63, KEY_VOLUME_UP},
@@ -41,7 +41,7 @@ const struct key_mapping keys[] =
     {6,KEY_N}, {7,KEY_M}, {8,KEY_COMMA},{9,KEY_PERIOD},{10,KEY_UP},{11,KEY_QUOTE},
     {0,KEY_SPACE},{1,KEY_BACKSPACE},{2,KEY_ENTER},{3,KEY_LEFT},{4,KEY_DOWN},{5,KEY_RIGHT}
 };
-
+*/
 
 //Physical button number => Virtual button code
 uint16_t KeyMapper::map_button_to_key(uint8_t button){

@@ -142,9 +142,18 @@ ButtonsState HardwareController::update(uint8_t led_state){
         }//Scanned all keys in row
         reset_rows();
     }//Scanned all keys
+    
+    //Pull up the 3 function button pins and check if they are pulled down
+    PORTB |= (1<<4);
+    PORTC |= (1<<7);
+    PORTD |= (1<<6);
     if(!(PINB & (1<<4))) result.states[63] = true;//button 3
     if(!(PIND & (1<<6))) result.states[62] = true;//button 2
     if(!(PINC & (1<<7))) result.states[61] = true;//button 1
+    //Now pull them back down
+    PORTB &= ~(1<<4);
+    PORTC &= ~(1<<7);
+    PORTD &= ~(1<<6);
     return result;
 }
 

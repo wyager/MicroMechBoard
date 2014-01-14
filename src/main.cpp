@@ -23,7 +23,7 @@ int main()
     USBCommunicator usb_communicator; //Start USB hardware
     
     //Holds information from the master about the state of the indicator LEDs
-    uint8_t                 led_status;
+    uint8_t                 led_status = 0;
     //Manages hardware functions, including scanning keys. Constructor configures hardware.
     HardwareController      hardware;
     //Manages debouncing buttons. The argument is the number of samples needed to detect a change in state.
