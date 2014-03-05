@@ -53,6 +53,7 @@ public:
     void become_master();
     //Sends a packet (to the master or slave)
     //Returns true if this->is_master and slave got the packet, false otherwise
+    //If we're the slave, this blocks until the master recieves the packet
     bool send_packet(const Packet& packet);
     //Requests a packet (from the slave)
     Packet request_packet();
