@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.4">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -3124,10 +3124,9 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="102.87" y1="69.85" x2="83.82" y2="69.85" width="0.4064" layer="16"/>
 <wire x1="11.43" y1="113.03" x2="11.43" y2="106.68" width="0.4064" layer="1"/>
 <wire x1="11.43" y1="106.68" x2="3.81" y2="106.68" width="0.4064" layer="1"/>
-<wire x1="3.81" y1="106.68" x2="3.81" y2="72.39" width="0.4064" layer="1"/>
-<via x="3.81" y="72.39" extent="1-16" drill="0.6" shape="square"/>
-<wire x1="3.81" y1="72.39" x2="3.81" y2="69.85" width="0.4064" layer="16"/>
-<wire x1="3.81" y1="69.85" x2="7.62" y2="69.85" width="0.4064" layer="16"/>
+<wire x1="3.81" y1="106.68" x2="3.81" y2="69.85" width="0.4064" layer="1"/>
+<wire x1="3.81" y1="69.85" x2="7.62" y2="69.85" width="0.4064" layer="1"/>
+<wire x1="7.62" y1="69.85" x2="7.62" y2="64.77" width="0.4064" layer="1"/>
 </signal>
 <signal name="N$39">
 <contactref element="U$7" pad="SIDE"/>
@@ -3199,8 +3198,8 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="6.35" y1="113.03" x2="6.35" y2="109.22" width="0.4064" layer="1"/>
 <wire x1="6.35" y1="109.22" x2="2.54" y2="109.22" width="0.4064" layer="1"/>
 <wire x1="2.54" y1="109.22" x2="2.54" y2="31.75" width="0.4064" layer="1"/>
-<via x="2.54" y="31.75" extent="1-16" drill="0.6" shape="square"/>
-<wire x1="2.54" y1="31.75" x2="7.62" y2="31.75" width="0.4064" layer="16"/>
+<wire x1="2.54" y1="31.75" x2="7.62" y2="31.75" width="0.4064" layer="1"/>
+<wire x1="7.62" y1="31.75" x2="7.62" y2="26.67" width="0.4064" layer="1"/>
 </signal>
 <signal name="GND">
 <contactref element="U$32" pad="UP"/>
