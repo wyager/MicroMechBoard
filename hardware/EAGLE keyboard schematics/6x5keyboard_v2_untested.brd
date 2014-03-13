@@ -3136,8 +3136,6 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="U$11" pad="SIDE"/>
 <contactref element="U$12" pad="SIDE"/>
 <contactref element="U$31" pad="PB3"/>
-<wire x1="13.97" y1="113.03" x2="12.7" y2="107.95" width="0.4064" layer="16"/>
-<wire x1="12.7" y1="107.95" x2="11.43" y2="106.68" width="0.4064" layer="16"/>
 <wire x1="11.43" y1="106.68" x2="3.81" y2="106.68" width="0.4064" layer="16"/>
 <wire x1="3.81" y1="106.68" x2="3.81" y2="83.82" width="0.4064" layer="16"/>
 <wire x1="3.81" y1="83.82" x2="7.62" y2="83.82" width="0.4064" layer="16"/>
@@ -3152,6 +3150,9 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="83.82" y1="88.9" x2="64.77" y2="88.9" width="0.4064" layer="16"/>
 <wire x1="102.87" y1="83.82" x2="102.87" y2="88.9" width="0.4064" layer="16"/>
 <wire x1="102.87" y1="88.9" x2="83.82" y2="88.9" width="0.4064" layer="16"/>
+<wire x1="13.97" y1="113.03" x2="13.97" y2="109.22" width="0.4064" layer="16"/>
+<wire x1="13.97" y1="109.22" x2="11.43" y2="109.22" width="0.4064" layer="16"/>
+<wire x1="11.43" y1="109.22" x2="11.43" y2="106.68" width="0.4064" layer="16"/>
 </signal>
 <signal name="N$40">
 <contactref element="U$25" pad="SIDE"/>
@@ -3161,9 +3162,9 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="U$30" pad="SIDE"/>
 <contactref element="U$31" pad="PB7"/>
 <wire x1="16.51" y1="113.03" x2="16.51" y2="107.95" width="0.4064" layer="16"/>
-<wire x1="16.51" y1="107.95" x2="16.51" y2="103.505" width="0.4064" layer="16"/>
-<wire x1="16.51" y1="103.505" x2="7.62" y2="103.505" width="0.4064" layer="16"/>
-<wire x1="7.62" y1="103.505" x2="7.62" y2="102.87" width="0.4064" layer="16"/>
+<wire x1="16.51" y1="107.95" x2="16.51" y2="103.1875" width="0.4064" layer="16"/>
+<wire x1="16.51" y1="103.1875" x2="7.62" y2="103.1875" width="0.4064" layer="16"/>
+<wire x1="7.62" y1="103.1875" x2="7.62" y2="102.87" width="0.4064" layer="16"/>
 <wire x1="26.67" y1="102.87" x2="26.67" y2="107.95" width="0.4064" layer="16"/>
 <wire x1="26.67" y1="107.95" x2="16.51" y2="107.95" width="0.4064" layer="16"/>
 <wire x1="83.82" y1="102.87" x2="83.82" y2="107.95" width="0.4064" layer="16"/>
@@ -3210,7 +3211,6 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="R1" pad="1"/>
 <contactref element="R2" pad="1"/>
 <contactref element="R3" pad="1"/>
-<wire x1="109.22" y1="127" x2="116.205" y2="127" width="0.4064" layer="16"/>
 <polygon width="0.4064" layer="16">
 <vertex x="1.27" y="130.81"/>
 <vertex x="119.38" y="130.81"/>
@@ -3228,6 +3228,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="78.105" y1="127" x2="90.17" y2="127" width="0.4064" layer="1"/>
 <wire x1="90.17" y1="127" x2="97.155" y2="127" width="0.4064" layer="1"/>
 <wire x1="97.155" y1="127" x2="109.22" y2="127" width="0.4064" layer="1"/>
+<wire x1="109.22" y1="127" x2="116.205" y2="127" width="0.4064" layer="1"/>
 </signal>
 <signal name="N$46">
 <contactref element="U$31" pad="PB5"/>
@@ -3330,12 +3331,12 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="N$42">
 <contactref element="U$32" pad="LED-"/>
 <contactref element="R1" pad="2"/>
-<wire x1="107.95" y1="116.84" x2="116.205" y2="116.84" width="0.4064" layer="16"/>
+<wire x1="107.95" y1="116.84" x2="116.205" y2="116.84" width="0.4064" layer="1"/>
 </signal>
 <signal name="N$43">
 <contactref element="R2" pad="2"/>
 <contactref element="U$33" pad="LED-"/>
-<wire x1="88.9" y1="116.84" x2="97.155" y2="116.84" width="0.4064" layer="16"/>
+<wire x1="88.9" y1="116.84" x2="97.155" y2="116.84" width="0.4064" layer="1"/>
 </signal>
 <signal name="N$44">
 <contactref element="R3" pad="2"/>
