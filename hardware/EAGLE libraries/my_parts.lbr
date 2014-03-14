@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.4">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -136,6 +136,24 @@ MX-NW</text>
 <text x="3.302" y="-3.556" size="1.016" layer="21">2</text>
 <text x="7.112" y="2.54" size="1.016" layer="21">3</text>
 </package>
+<package name="DUAL-USB-A">
+<pad name="S1" x="0" y="5.68" drill="2.3"/>
+<pad name="S3" x="13.14" y="5.68" drill="2.3"/>
+<pad name="S2" x="0" y="0" drill="2.3"/>
+<pad name="S4" x="13.14" y="0" drill="2.3"/>
+<pad name="VCC_1" x="3.07" y="2.71" drill="0.92"/>
+<pad name="GND_1" x="10.07" y="2.71" drill="0.92"/>
+<pad name="VCC_2" x="3.07" y="5.33" drill="0.92"/>
+<pad name="GND_2" x="10.07" y="5.33" drill="0.92"/>
+<pad name="-DATA_1" x="5.57" y="2.71" drill="0.92"/>
+<pad name="+DATA_1" x="7.57" y="2.71" drill="0.92"/>
+<pad name="-DATA_2" x="5.57" y="5.33" drill="0.92"/>
+<pad name="+DATA_2" x="7.57" y="5.33" drill="0.92"/>
+<wire x1="0" y1="-10" x2="13.2" y2="-10" width="0.127" layer="21"/>
+<wire x1="13.2" y1="-10" x2="13.2" y2="7" width="0.127" layer="21"/>
+<wire x1="13.2" y1="7" x2="0" y2="7" width="0.127" layer="21"/>
+<wire x1="0" y1="7" x2="0" y2="-10" width="0.127" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="TPS6734I">
@@ -187,6 +205,17 @@ MX1A-NW</text>
 <wire x1="2.54" y1="7.62" x2="7.62" y2="7.62" width="0.127" layer="94"/>
 <wire x1="-2.54" y1="-2.54" x2="7.62" y2="-2.54" width="0.127" layer="94"/>
 <wire x1="-15.24" y1="-7.62" x2="7.62" y2="-7.62" width="0.127" layer="94"/>
+</symbol>
+<symbol name="DUAL_USB_A">
+<pin name="GND" x="0" y="-2.54" length="middle" rot="R180"/>
+<pin name="D+" x="0" y="0" length="middle" rot="R180"/>
+<pin name="D-" x="0" y="2.54" length="middle" rot="R180"/>
+<pin name="VCC" x="0" y="5.08" length="middle" rot="R180"/>
+<wire x1="-12.7" y1="7.62" x2="-5.08" y2="7.62" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="7.62" x2="-5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-5.08" x2="-15.24" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-12.7" y1="7.62" x2="-15.24" y2="7.62" width="0.254" layer="94"/>
+<text x="-11.684" y="-2.032" size="2.54" layer="94" rot="R90">USB</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -261,6 +290,30 @@ MX1A-NW</text>
 <connect gate="G$1" pin="2" pad="2"/>
 <connect gate="G$1" pin="3" pad="3"/>
 <connect gate="G$1" pin="4" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="DUAL-USB-A">
+<description>A Dual-USB A jack.</description>
+<gates>
+<gate name="G$1" symbol="DUAL_USB_A" x="-15.24" y="17.78" swaplevel="1"/>
+<gate name="G$2" symbol="DUAL_USB_A" x="-15.24" y="-5.08" swaplevel="1"/>
+</gates>
+<devices>
+<device name="" package="DUAL-USB-A">
+<connects>
+<connect gate="G$1" pin="D+" pad="+DATA_1"/>
+<connect gate="G$1" pin="D-" pad="-DATA_1"/>
+<connect gate="G$1" pin="GND" pad="GND_1"/>
+<connect gate="G$1" pin="VCC" pad="VCC_1"/>
+<connect gate="G$2" pin="D+" pad="+DATA_2"/>
+<connect gate="G$2" pin="D-" pad="-DATA_2"/>
+<connect gate="G$2" pin="GND" pad="GND_2"/>
+<connect gate="G$2" pin="VCC" pad="VCC_2"/>
 </connects>
 <technologies>
 <technology name=""/>
