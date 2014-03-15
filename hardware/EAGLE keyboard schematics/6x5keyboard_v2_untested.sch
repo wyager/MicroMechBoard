@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -6998,6 +6998,40 @@ type 0309, grid 2.5 mm</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="supply1">
+<description>&lt;b&gt;Supply Symbols&lt;/b&gt;&lt;p&gt;
+ GND, VCC, 0V, +5V, -5V, etc.&lt;p&gt;
+ Please keep in mind, that these devices are necessary for the
+ automatic wiring of the supply signals.&lt;p&gt;
+ The pin name defined in the symbol is identical to the net which is to be wired automatically.&lt;p&gt;
+ In this library the device names are the same as the pin names of the symbols, therefore the correct signal names appear next to the supply symbols in the schematic.&lt;p&gt;
+ &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+</packages>
+<symbols>
+<symbol name="VCC">
+<wire x1="1.27" y1="-1.905" x2="0" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="-1.27" y2="-1.905" width="0.254" layer="94"/>
+<text x="-2.54" y="-2.54" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<pin name="VCC" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="VCC" prefix="P+">
+<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<gates>
+<gate name="VCC" symbol="VCC" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -7073,16 +7107,17 @@ type 0309, grid 2.5 mm</description>
 <part name="U$33" library="my_parts" deviceset="CHERRY-MX1A-E1NW-LED" device=""/>
 <part name="U$34" library="my_parts" deviceset="CHERRY-MX1A-E1NW-LED" device=""/>
 <part name="SUPPLY1" library="supply2" deviceset="GND" device=""/>
-<part name="R1" library="rcl" deviceset="R-US_" device="0207/10"/>
-<part name="R2" library="rcl" deviceset="R-US_" device="0207/10"/>
-<part name="R3" library="rcl" deviceset="R-US_" device="0207/10"/>
+<part name="R1" library="rcl" deviceset="R-US_" device="0207/10" value="150"/>
+<part name="R2" library="rcl" deviceset="R-US_" device="0207/10" value="150"/>
+<part name="R3" library="rcl" deviceset="R-US_" device="0207/10" value="150"/>
 <part name="SUPPLY2" library="supply2" deviceset="GND" device=""/>
 <part name="R4" library="resistor" deviceset="R-US_" device="0207/10" value="3.3K"/>
 <part name="R5" library="resistor" deviceset="R-US_" device="0207/10" value="3.3K"/>
-<part name="JP1" library="pinhead" deviceset="PINHD-2X2" device=""/>
+<part name="JP1" library="pinhead" deviceset="PINHD-2X2" device="" value="UART"/>
 <part name="SUPPLY4" library="supply2" deviceset="GND" device=""/>
 <part name="U$35" library="my_parts" deviceset="DUAL-USB-A" device=""/>
 <part name="SUPPLY5" library="supply2" deviceset="GND" device=""/>
+<part name="P+1" library="supply1" deviceset="VCC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -7165,6 +7200,7 @@ type 0309, grid 2.5 mm</description>
 <instance part="U$35" gate="G$1" x="-96.52" y="111.76"/>
 <instance part="U$35" gate="G$2" x="-96.52" y="96.52"/>
 <instance part="SUPPLY5" gate="GND" x="-71.12" y="93.98" rot="R90"/>
+<instance part="P+1" gate="VCC" x="-86.36" y="149.86"/>
 </instances>
 <busses>
 </busses>
@@ -7804,7 +7840,7 @@ type 0309, grid 2.5 mm</description>
 <junction x="-51.435" y="107.95"/>
 </segment>
 </net>
-<net name="N$51" class="0">
+<net name="VCC" class="0">
 <segment>
 <pinref part="U$35" gate="G$1" pin="VCC"/>
 <wire x1="-86.36" y1="116.84" x2="-96.52" y2="116.84" width="0.1524" layer="91"/>
@@ -7832,6 +7868,9 @@ type 0309, grid 2.5 mm</description>
 <wire x1="-60.96" y1="96.52" x2="-54.61" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="-54.61" y1="96.52" x2="-54.61" y2="97.79" width="0.1524" layer="91"/>
 <junction x="-60.96" y="96.52"/>
+<pinref part="P+1" gate="VCC" pin="VCC"/>
+<wire x1="-86.36" y1="147.32" x2="-86.36" y2="144.78" width="0.1524" layer="91"/>
+<junction x="-86.36" y="144.78"/>
 </segment>
 </net>
 <net name="N$40" class="0">
