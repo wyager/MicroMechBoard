@@ -2749,21 +2749,11 @@ Please make sure your boards conform to these design rules.</description>
 <element name="U$32" library="my_parts" package="CHERRYMX-NN-LED" value="CHERRY-MX1A-E1NW-LED" x="106.68" y="121.92"/>
 <element name="U$33" library="my_parts" package="CHERRYMX-NN-LED" value="CHERRY-MX1A-E1NW-LED" x="87.63" y="121.92"/>
 <element name="U$34" library="my_parts" package="CHERRYMX-NN-LED" value="CHERRY-MX1A-E1NW-LED" x="68.58" y="121.92"/>
-<element name="R1" library="rcl" package="0207/10" value="150" x="116.205" y="121.92" smashed="yes" rot="R270">
-<attribute name="VALUE" x="115.57" y="123.8631" size="1.27" layer="27" font="vector" ratio="18" rot="R270"/>
-</element>
-<element name="R2" library="rcl" package="0207/10" value="150" x="97.155" y="121.92" smashed="yes" rot="R270">
-<attribute name="VALUE" x="96.52" y="123.8631" size="1.27" layer="27" font="vector" ratio="18" rot="R270"/>
-</element>
-<element name="R3" library="rcl" package="0207/10" value="150" x="78.105" y="121.92" smashed="yes" rot="R270">
-<attribute name="VALUE" x="77.47" y="123.8631" size="1.27" layer="27" font="vector" ratio="18" rot="R270"/>
-</element>
-<element name="R4" library="resistor" package="0207/10" value="3.3K" x="36.83" y="118.11" smashed="yes" rot="R90">
-<attribute name="VALUE" x="36.195" y="120.3706" size="1.27" layer="27" font="vector" ratio="18" rot="R270"/>
-</element>
-<element name="R5" library="resistor" package="0207/10" value="3.3K" x="39.37" y="118.11" smashed="yes" rot="R270">
-<attribute name="VALUE" x="38.735" y="120.3706" size="1.27" layer="27" font="vector" ratio="18" rot="R270"/>
-</element>
+<element name="R1" library="rcl" package="0207/10" value="150" x="116.205" y="121.92" smashed="yes" rot="R270"/>
+<element name="R2" library="rcl" package="0207/10" value="150" x="97.155" y="121.92" smashed="yes" rot="R270"/>
+<element name="R3" library="rcl" package="0207/10" value="150" x="78.105" y="121.92" smashed="yes" rot="R270"/>
+<element name="R4" library="resistor" package="0207/10" value="3.3K" x="36.83" y="118.11" smashed="yes" rot="R90"/>
+<element name="R5" library="resistor" package="0207/10" value="3.3K" x="39.37" y="118.11" smashed="yes" rot="R270"/>
 <element name="JP1" library="pinhead" package="2X02" value="UART" x="38.1" y="127" smashed="yes" rot="R270"/>
 <element name="U$35" library="my_parts" package="DUAL-USB-A" value="DUAL-USB-A" x="57.4675" y="120.65" rot="R180"/>
 </elements>
