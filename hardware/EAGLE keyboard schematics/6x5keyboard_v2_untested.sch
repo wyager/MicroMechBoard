@@ -119,6 +119,9 @@ MX-NW</text>
 <wire x1="13.2" y1="7" x2="0" y2="7" width="0.127" layer="21"/>
 <wire x1="0" y1="7" x2="0" y2="-10" width="0.127" layer="21"/>
 </package>
+<package name="MOUNTING-PAD">
+<smd name="P$1" x="0" y="0" dx="6.35" dy="6.35" layer="16"/>
+</package>
 </packages>
 <symbols>
 <symbol name="CHERRYMX-NN">
@@ -149,6 +152,10 @@ MX1A-NW</text>
 <wire x1="-5.08" y1="-5.08" x2="-15.24" y2="-5.08" width="0.254" layer="94"/>
 <wire x1="-12.7" y1="7.62" x2="-15.24" y2="7.62" width="0.254" layer="94"/>
 <text x="-11.684" y="-2.032" size="2.54" layer="94" rot="R90">USB</text>
+</symbol>
+<symbol name="MOUNTING-PAD">
+<pin name="P$1" x="-5.08" y="0" visible="off" length="middle" direction="nc"/>
+<rectangle x1="-2.54" y1="-2.54" x2="2.54" y2="2.54" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -205,6 +212,21 @@ MX1A-NW</text>
 <connect gate="G$2" pin="D-" pad="-DATA_2"/>
 <connect gate="G$2" pin="GND" pad="GND_2"/>
 <connect gate="G$2" pin="VCC" pad="VCC_2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MOUNTING-PAD">
+<gates>
+<gate name="G$1" symbol="MOUNTING-PAD" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="MOUNTING-PAD">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -7118,10 +7140,22 @@ type 0309, grid 2.5 mm</description>
 <part name="U$35" library="my_parts" deviceset="DUAL-USB-A" device=""/>
 <part name="SUPPLY5" library="supply2" deviceset="GND" device=""/>
 <part name="P+1" library="supply1" deviceset="VCC" device=""/>
+<part name="U$36" library="my_parts" deviceset="MOUNTING-PAD" device=""/>
+<part name="U$37" library="my_parts" deviceset="MOUNTING-PAD" device=""/>
+<part name="U$38" library="my_parts" deviceset="MOUNTING-PAD" device=""/>
+<part name="U$39" library="my_parts" deviceset="MOUNTING-PAD" device=""/>
+<part name="U$40" library="my_parts" deviceset="MOUNTING-PAD" device=""/>
+<part name="U$41" library="my_parts" deviceset="MOUNTING-PAD" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
+<wire x1="-50.8" y1="45.72" x2="-15.24" y2="45.72" width="0.4064" layer="94"/>
+<wire x1="-15.24" y1="45.72" x2="-15.24" y2="15.24" width="0.4064" layer="94"/>
+<wire x1="-15.24" y1="15.24" x2="-50.8" y2="15.24" width="0.4064" layer="94"/>
+<wire x1="-50.8" y1="15.24" x2="-50.8" y2="45.72" width="0.4064" layer="94"/>
+<text x="-45.72" y="38.1" size="1.778" layer="94">Thermally isolated 
+mounting pads</text>
 </plain>
 <instances>
 <instance part="U$2" gate="G$1" x="31.75" y="53.34"/>
@@ -7201,6 +7235,12 @@ type 0309, grid 2.5 mm</description>
 <instance part="U$35" gate="G$2" x="-96.52" y="96.52"/>
 <instance part="SUPPLY5" gate="GND" x="-71.12" y="93.98" rot="R90"/>
 <instance part="P+1" gate="VCC" x="-86.36" y="149.86"/>
+<instance part="U$36" gate="G$1" x="-43.18" y="30.48"/>
+<instance part="U$37" gate="G$1" x="-22.86" y="30.48"/>
+<instance part="U$38" gate="G$1" x="-33.02" y="30.48"/>
+<instance part="U$39" gate="G$1" x="-33.02" y="22.86"/>
+<instance part="U$40" gate="G$1" x="-43.18" y="22.86"/>
+<instance part="U$41" gate="G$1" x="-22.86" y="22.86"/>
 </instances>
 <busses>
 </busses>
