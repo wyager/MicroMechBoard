@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -154,6 +154,9 @@ MX-NW</text>
 <wire x1="13.2" y1="7" x2="0" y2="7" width="0.127" layer="21"/>
 <wire x1="0" y1="7" x2="0" y2="-10" width="0.127" layer="21"/>
 </package>
+<package name="MOUNTING-PAD">
+<smd name="P$1" x="0" y="0" dx="6.35" dy="6.35" layer="16"/>
+</package>
 </packages>
 <symbols>
 <symbol name="TPS6734I">
@@ -216,6 +219,10 @@ MX1A-NW</text>
 <wire x1="-5.08" y1="-5.08" x2="-15.24" y2="-5.08" width="0.254" layer="94"/>
 <wire x1="-12.7" y1="7.62" x2="-15.24" y2="7.62" width="0.254" layer="94"/>
 <text x="-11.684" y="-2.032" size="2.54" layer="94" rot="R90">USB</text>
+</symbol>
+<symbol name="MOUNTING-PAD">
+<pin name="P$1" x="-5.08" y="0" visible="off" length="middle" direction="nc"/>
+<rectangle x1="-2.54" y1="-2.54" x2="2.54" y2="2.54" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -314,6 +321,21 @@ MX1A-NW</text>
 <connect gate="G$2" pin="D-" pad="-DATA_2"/>
 <connect gate="G$2" pin="GND" pad="GND_2"/>
 <connect gate="G$2" pin="VCC" pad="VCC_2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MOUNTING-PAD">
+<gates>
+<gate name="G$1" symbol="MOUNTING-PAD" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="MOUNTING-PAD">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
 </connects>
 <technologies>
 <technology name=""/>

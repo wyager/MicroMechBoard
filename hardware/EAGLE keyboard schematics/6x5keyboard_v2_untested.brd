@@ -74,18 +74,6 @@
 <wire x1="119.05" y1="13.97" x2="119.05" y2="130.8" width="0" layer="20"/>
 <wire x1="119.05" y1="130.8" x2="1.27" y2="130.8" width="0" layer="20"/>
 <wire x1="1.27" y1="130.8" x2="1.27" y2="13.97" width="0" layer="20"/>
-<rectangle x1="6.35" y1="118.11" x2="12.7" y2="124.46" layer="16"/>
-<rectangle x1="6.35" y1="118.11" x2="12.7" y2="124.46" layer="30"/>
-<rectangle x1="105.41" y1="108.585" x2="111.76" y2="114.935" layer="16"/>
-<rectangle x1="105.41" y1="108.585" x2="111.76" y2="114.935" layer="30"/>
-<rectangle x1="2.54" y1="15.24" x2="8.89" y2="21.59" layer="16"/>
-<rectangle x1="2.54" y1="15.24" x2="8.89" y2="21.59" layer="30"/>
-<rectangle x1="99.06" y1="15.24" x2="105.41" y2="21.59" layer="16"/>
-<rectangle x1="99.06" y1="15.24" x2="105.41" y2="21.59" layer="30"/>
-<rectangle x1="49.53" y1="71.755" x2="55.88" y2="78.105" layer="16"/>
-<rectangle x1="49.53" y1="71.755" x2="55.88" y2="78.105" layer="30"/>
-<rectangle x1="62.865" y1="71.755" x2="69.215" y2="78.105" layer="16"/>
-<rectangle x1="62.865" y1="71.755" x2="69.215" y2="78.105" layer="30"/>
 <wire x1="34.925" y1="126.365" x2="34.925" y2="125.095" width="0.1778" layer="21"/>
 <wire x1="34.925" y1="125.095" x2="35.2425" y2="125.4125" width="0.1778" layer="21"/>
 <wire x1="34.925" y1="125.095" x2="34.6075" y2="125.4125" width="0.1778" layer="21"/>
@@ -147,6 +135,9 @@ MX-NW</text>
 <wire x1="13.2" y1="-10" x2="13.2" y2="7" width="0.127" layer="21"/>
 <wire x1="13.2" y1="7" x2="0" y2="7" width="0.127" layer="21"/>
 <wire x1="0" y1="7" x2="0" y2="-10" width="0.127" layer="21"/>
+</package>
+<package name="MOUNTING-PAD">
+<smd name="P$1" x="0" y="0" dx="6.35" dy="6.35" layer="16"/>
 </package>
 </packages>
 </library>
@@ -2756,6 +2747,12 @@ Please make sure your boards conform to these design rules.</description>
 <element name="R5" library="resistor" package="0207/10" value="3.3K" x="39.37" y="118.11" smashed="yes" rot="R270"/>
 <element name="JP1" library="pinhead" package="2X02" value="UART" x="38.1" y="127" smashed="yes" rot="R270"/>
 <element name="U$35" library="my_parts" package="DUAL-USB-A" value="DUAL-USB-A" x="57.4675" y="120.65" rot="R180"/>
+<element name="U$36" library="my_parts" package="MOUNTING-PAD" value="MOUNTING-PAD" x="5.715" y="18.415"/>
+<element name="U$37" library="my_parts" package="MOUNTING-PAD" value="MOUNTING-PAD" x="102.235" y="18.415"/>
+<element name="U$38" library="my_parts" package="MOUNTING-PAD" value="MOUNTING-PAD" x="52.705" y="74.93"/>
+<element name="U$39" library="my_parts" package="MOUNTING-PAD" value="MOUNTING-PAD" x="66.04" y="74.93"/>
+<element name="U$40" library="my_parts" package="MOUNTING-PAD" value="MOUNTING-PAD" x="9.525" y="121.285"/>
+<element name="U$41" library="my_parts" package="MOUNTING-PAD" value="MOUNTING-PAD" x="108.585" y="111.76"/>
 </elements>
 <signals>
 <signal name="VCC2">
