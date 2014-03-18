@@ -159,8 +159,9 @@ ButtonsState HardwareController::update(uint8_t led_state){
 
 HardwareController::HardwareController(){
     //Do NOT use Teensy's LED, as PD6 is currently used for
-    //measuring a key and will burn out on key press if
-    //the LED is turned on
+    //measuring a key. Pushing the key will short the pin,
+    //which will burn out the pin if it is fully turned
+    //on. The LED pin being weakly pulled up is fine.
     
     //Columns (0 to 5, left to right):
     //   PORTF: 0, 1, 4, 5, 6, 7
