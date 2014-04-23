@@ -20,6 +20,7 @@ public:
     static void set_blue_pwm(uint8_t value);
     //Simply iterates through all PHYSICAL keys (i.e. buttons) and 
     //sets their corresponding bit value to true if they are pressed
+    //and then returns the corresponding ButtonsState object
     ButtonsState update(uint8_t led_state);
 };
 

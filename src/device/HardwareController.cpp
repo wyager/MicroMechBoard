@@ -115,6 +115,11 @@ inline void reset_columns(){
 ButtonsState HardwareController::update(uint8_t led_state){
 	HardwareController::set_green_led(led_state & 1);//Num lock
 	HardwareController::set_blue_led(led_state & 2);//Caps lock
+    
+    //Pull up the 3 function button pins and check if they are pulled down
+    PORTB |= (1<<4);
+    PORTC |= (1<<7);
+    PORTD |= (1<<6);
 
     ButtonsState result = {};
     DDRF &= column_off_mask; //Columns
@@ -143,10 +148,6 @@ ButtonsState HardwareController::update(uint8_t led_state){
         reset_rows();
     }//Scanned all keys
     
-    //Pull up the 3 function button pins and check if they are pulled down
-    PORTB |= (1<<4);
-    PORTC |= (1<<7);
-    PORTD |= (1<<6);
     if(!(PINB & (1<<4))) result.states[63] = true;//button 3
     if(!(PIND & (1<<6))) result.states[62] = true;//button 2
     if(!(PINC & (1<<7))) result.states[61] = true;//button 1
