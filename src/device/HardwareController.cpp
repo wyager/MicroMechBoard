@@ -11,6 +11,7 @@ extern "C"{
 }
 
 //For nifty LED fade effects
+/*
 const uint8_t PROGMEM half_sin_curve[] = {0, 8, 16, 23, 31, 39, 47, 55, 63, 71,\
  78, 86, 93, 101, 108, 115, 122, 129, 136, 143, 149, 156, 162, 168,\
   174, 180, 185, 191, 196, 201, 206, 210, 215, 219, 223, 227, 230,\
@@ -19,6 +20,7 @@ const uint8_t PROGMEM half_sin_curve[] = {0, 8, 16, 23, 31, 39, 47, 55, 63, 71,\
      234, 230, 227, 223, 219, 215, 210, 206, 201, 196, 191, 185, 180,\
       174, 168, 162, 156, 149, 143, 136, 129, 122, 115, 108, 101, 93, \
        86, 78, 71, 63, 55, 47, 39, 31, 23, 16, 8, 0};
+*/
 
 void HardwareController::set_red_led(bool value){
     set_red_pwm(!!value * 255);
@@ -110,9 +112,11 @@ inline void reset_columns(){
     DDRF &= column_off_mask;
 }
 
-//Simply iterates through all PHYSICAL keys and sets its corresponding bit value to true
-//if the key is pressed.
+//Simply iterates through all PHYSICAL keys and sets its corresponding value 
+//in the returned ButtonsState to true if the key is pressed.
 ButtonsState HardwareController::update(uint8_t led_state){
+	ButtonsState result = {};
+
 	HardwareController::set_green_led(led_state & 1);//Num lock
 	HardwareController::set_blue_led(led_state & 2);//Caps lock
     
@@ -121,7 +125,6 @@ ButtonsState HardwareController::update(uint8_t led_state){
     PORTC |= (1<<7);
     PORTD |= (1<<6);
 
-    ButtonsState result = {};
     DDRF &= column_off_mask; //Columns
     DDRB &= row_off_mask; //Rows
     PORTF &= column_off_mask;
@@ -148,10 +151,11 @@ ButtonsState HardwareController::update(uint8_t led_state){
         reset_rows();
     }//Scanned all keys
     
+    //The function buttons are not inside the key matrix with the others
     if(!(PINB & (1<<4))) result.states[63] = true;//button 3
     if(!(PIND & (1<<6))) result.states[62] = true;//button 2
     if(!(PINC & (1<<7))) result.states[61] = true;//button 1
-    //Now pull them back down
+    //Now pull back down function buttons
     PORTB &= ~(1<<4);
     PORTC &= ~(1<<7);
     PORTD &= ~(1<<6);

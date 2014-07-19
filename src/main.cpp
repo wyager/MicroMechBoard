@@ -44,9 +44,12 @@ int main()
         ButtonsDelta button_changes = push_detector.update(debounced_state);
         KeysDelta key_changes = key_mapper.resolve(button_changes);
         
-        KeysDelta slave_key_changes = slave.update(led_status); //If we don't have a slave, this returns a KeysDelta full of zeros
+        //If we don't have a slave, this returns a KeysDelta full of zeros
+        KeysDelta slave_key_changes = slave.update(led_status); 
         
-        led_status = master.notify(key_changes, slave_key_changes); //Sends all key press/releases to the USB or I2C master
+        //Sends all key press/release events to the USB or I2C master and 
+        //returns the state of the keyboard LEDs, as reported by the master
+        led_status = master.notify(key_changes, slave_key_changes); 
     }
     return 0;
 }
