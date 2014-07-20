@@ -8,7 +8,7 @@
 
 template <int Size>
 class DebouncerArray {
-protected:
+private:
     //The number of samples that conflict with the current recorded state
     unsigned char count[Size];
     //The current recorded state
