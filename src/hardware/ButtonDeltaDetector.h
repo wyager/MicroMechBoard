@@ -12,7 +12,7 @@ class ButtonDeltaDetector {
 private:
 	bool known_states[64];
 public:
-    ButtonDeltaDetector():known_states({0}){}
+    ButtonDeltaDetector():known_states(){}
 	ButtonsDelta update(const ButtonsState& debounced_states);
 };
 
