@@ -1,6 +1,6 @@
 # MicroMechBoard
 This project is the teensy code for Will Yager's custom mechanical keyboard
-project.
+project. ([blog post](http://yager.io/keyboard/keyboard.html))
 
 The code serves two functions:
 
